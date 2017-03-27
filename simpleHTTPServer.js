@@ -5,9 +5,12 @@ var http = require('http');
 const PORT = 8080;
 
 // need a function which handles requests and send response
+function handleRequst(request, response){
+	response.end('It works!! path Hit: ' + request.url);
+}
 
 // create a server
-var server = http.createServer();
+var server = http.createServer(handleRequst);
 
 // start server
 server.listen(PORT, function () {
