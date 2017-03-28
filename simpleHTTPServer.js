@@ -10,7 +10,7 @@ function handleRequst(request, response){
 }
 
 // create a server
-var server = http.createServer(handleRequst);
+var server = http.createServer();
 
 // start server
 server.listen(PORT, function () {
