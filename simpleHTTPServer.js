@@ -7,13 +7,15 @@ const PORT = 8080;
 // need a function which handles requests and send response
 function handleRequst(request, response){
 	response.end('It works!! path Hit: ' + request.url);
+	console.log('client be connected...');
 }
 
 // create a server
-var server = http.createServer();
+var server = http.createServer(handleRequst);
 
 // start server
 server.listen(PORT, function () {
 	// Callback triggered when server is successfully listening..
 	console.log("Server listening on: http://localhost:%s", PORT);
+	console.log(this._connectionKey);
 });
